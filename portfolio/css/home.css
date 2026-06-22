@@ -1,0 +1,219 @@
+/* =============================================
+   home.css — Hero / Landing Section
+   ============================================= */
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 8% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background effects */
+.home-bg { position: absolute; inset: 0; z-index: 0; }
+
+.home-bg .orb1 {
+  position: absolute;
+  top: 20%; left: 10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.home-bg .orb2 {
+  position: absolute;
+  bottom: 10%; right: 5%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orbFloat 10s ease-in-out infinite reverse;
+}
+.home-bg .grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,217,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,217,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Content */
+.home-content {
+  max-width: 620px;
+  z-index: 1;
+  position: relative;
+}
+
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  color: var(--primary);
+  margin-bottom: 28px;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+.home-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+.home-content h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 0.2s forwards;
+}
+
+.home-content h1 {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--lighter);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 0.4s forwards;
+  letter-spacing: -2px;
+}
+.home-content h1 span {
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typed-line {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--light);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 0.6s forwards;
+}
+.typed-text  { color: var(--primary); font-weight: 600; }
+.cursor {
+  display: inline-block;
+  width: 2px; height: 1.1em;
+  background: var(--primary);
+  vertical-align: text-bottom;
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+
+.home-content p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 36px;
+  max-width: 500px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 0.8s forwards;
+}
+
+.home-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 1s forwards;
+}
+
+.social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 1.2s forwards;
+}
+.social-row a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  font-size: 17px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.social-row a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--glow);
+}
+
+/* Profile image */
+.home-image {
+  z-index: 1;
+  position: relative;
+  opacity: 0;
+  animation: fadeSlideLeft 1s ease 0.5s forwards;
+}
+
+.image-frame {
+  position: relative;
+  width: 420px; height: 420px;
+}
+.image-frame .ring1 {
+  position: absolute;
+  inset: -20px;
+  border: 1.5px solid rgba(0, 217, 255, 0.3);
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+}
+.image-frame .ring2 {
+  position: absolute;
+  inset: -40px;
+  border: 1.5px dashed rgba(124, 58, 237, 0.2);
+  border-radius: 50%;
+  animation: spin 20s linear infinite reverse;
+}
+.image-frame .img-wrap {
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 60px var(--glow), inset 0 0 40px rgba(0,0,0,0.4);
+  animation: float 5s ease-in-out infinite;
+}
+.image-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* Floating stat cards */
+.stats-card {
+  position: absolute;
+  background: rgba(10, 20, 40, 0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  backdrop-filter: blur(10px);
+}
+.stats-card.sc1 { bottom: 30px; left: -60px; }
+.stats-card.sc2 { top: 40px; right: -60px; }
+.stats-card .num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.stats-card .lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}

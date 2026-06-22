@@ -1,0 +1,123 @@
+/* =============================================
+   modals.css — CV Modal & Service Modal
+   ============================================= */
+
+/* ---- Shared overlay ---- */
+.modal-overlay,
+.svc-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open,
+.svc-modal.open {
+  display: flex;
+}
+
+/* ---- CV Modal ---- */
+.modal {
+  background: linear-gradient(135deg, #0d1f3c, #080f1e);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: modalIn 0.4s ease;
+}
+
+.modal h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--lighter);
+  margin-bottom: 8px;
+}
+.modal p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.cv-icon {
+  font-size: 64px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.modal-close,
+.svc-modal-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover,
+.svc-modal-close:hover { color: var(--primary); }
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ---- Service Modal ---- */
+.svc-modal-content {
+  background: linear-gradient(135deg, #0d1f3c, #080f1e);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 52px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  animation: modalIn 0.4s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#svcModalIcon {
+  font-size: 52px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.svc-modal-content h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--lighter);
+  margin-bottom: 12px;
+}
+.svc-modal-content .desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 28px;
+  white-space: pre-line;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.tech-tag {
+  padding: 7px 16px;
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  color: var(--primary);
+}

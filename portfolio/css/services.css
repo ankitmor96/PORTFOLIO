@@ -1,0 +1,128 @@
+/* =============================================
+   services.css — Services Section
+   ============================================= */
+
+.services { background: var(--dark); }
+
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.services-header .section-sub { margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Cards */
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-slow);
+  cursor: default;
+}
+
+/* Shimmer sweep on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(0, 217, 255, 0.1),
+    transparent);
+  transition: left 0.7s ease;
+}
+.service-card:hover::before { left: 100%; }
+
+/* Top accent line on hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 217, 255, 0.25);
+  background: rgba(0, 217, 255, 0.04);
+}
+
+/* Card elements */
+.service-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 217, 255, 0.3);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.service-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg,
+    rgba(0,217,255,0.15),
+    rgba(124,58,237,0.15));
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  color: var(--dark);
+}
+
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--lighter);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.service-features li {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-features li::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}

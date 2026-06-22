@@ -1,0 +1,67 @@
+/* =============================================
+   responsive.css — Media Queries
+   ============================================= */
+
+/* ---- Tablet (≤ 1100px) ---- */
+@media (max-width: 1100px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+    padding-top: 130px;
+  }
+  .home-content         { max-width: 100%; }
+  .home-content p       { max-width: 100%; }
+  .home-cta,
+  .social-row           { justify-content: center; }
+
+  .image-frame,
+  .image-frame .img-wrap {
+    width: 320px;
+    height: 320px;
+  }
+  .stats-card.sc1 { left: -20px; bottom: 10px; }
+  .stats-card.sc2 { right: -20px; top: 20px; }
+
+  .about-inner          { grid-template-columns: 1fr; }
+  .skills-inner         { grid-template-columns: 1fr; }
+  .contact-inner        { grid-template-columns: 1fr; }
+  .services-grid        { grid-template-columns: 1fr 1fr; }
+
+  .section-title        { font-size: 40px; }
+  .home-content h1      { font-size: 52px; }
+}
+
+/* ---- Mobile (≤ 768px) ---- */
+@media (max-width: 768px) {
+  .navbar               { gap: 18px; }
+  .navbar a             { font-size: 13px; }
+
+  .services-grid        { grid-template-columns: 1fr; }
+  .form-row             { grid-template-columns: 1fr; }
+  .tools-grid           { grid-template-columns: repeat(2, 1fr); }
+
+  .footer               { flex-direction: column; text-align: center; }
+
+  .home-content h1      { font-size: 40px; }
+  .section-title        { font-size: 32px; }
+
+  .contact-form-wrap    { padding: 28px; }
+  .svc-modal-content    { padding: 32px; }
+  .modal                { padding: 32px; }
+}
+
+/* ---- Small mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .header               { padding: 16px 5%; }
+  .nav-hire             { display: none !important; }
+
+  .home-content h1      { font-size: 34px; }
+  .home-badge           { font-size: 12px; }
+
+  .exp-badge            { bottom: -10px; right: -10px; padding: 14px 18px; }
+  .exp-badge .years     { font-size: 28px; }
+
+  .modal-actions        { flex-direction: column; }
+  .modal-actions .btn   { width: 100%; justify-content: center; }
+}

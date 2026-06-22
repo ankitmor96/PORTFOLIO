@@ -1,0 +1,89 @@
+/* =============================================
+   header.css — Fixed Navigation Header
+   ============================================= */
+
+.header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 22px 8%;
+  background: rgba(8, 15, 30, 0.88);
+  backdrop-filter: blur(18px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  padding: 14px 8%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 15, 30, 0.97);
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lighter);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--primary); }
+
+/* Nav links */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--primary);
+}
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Hire Me pill button */
+.nav-hire {
+  padding: 9px 22px !important;
+  background: transparent !important;
+  border: 1.5px solid var(--primary) !important;
+  border-radius: var(--radius-full) !important;
+  color: var(--primary) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+}
+.nav-hire::after { display: none !important; }
+.nav-hire:hover {
+  background: var(--primary) !important;
+  color: var(--dark) !important;
+  box-shadow: 0 0 20px var(--glow);
+}

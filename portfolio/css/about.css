@@ -1,0 +1,86 @@
+/* =============================================
+   about.css — About Me Section
+   ============================================= */
+
+.about { background: var(--darker); }
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Image side */
+.about-img-wrap { position: relative; }
+
+.about-img-wrap img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  filter: grayscale(20%);
+  transition: filter 0.4s;
+}
+.about-img-wrap:hover img { filter: grayscale(0%); }
+
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg,
+    rgba(0,217,255,0.1) 0%,
+    rgba(124,58,237,0.1) 100%);
+  pointer-events: none;
+}
+
+/* Experience badge */
+.exp-badge {
+  position: absolute;
+  bottom: -20px; right: -20px;
+  background: var(--primary);
+  color: var(--dark);
+  border-radius: 20px;
+  padding: 20px 24px;
+  font-family: var(--font-display);
+  text-align: center;
+}
+.exp-badge .years {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+.exp-badge .ytxt {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Content side */
+.about-content .section-sub { margin-bottom: 0; }
+
+.highlight-list {
+  list-style: none;
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.highlight-list li::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.about-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
